@@ -1,6 +1,9 @@
 export const srcPathImgsRoot = "somePath";
-
 export const destPathImgsRoot = "somePath";
+export const destPathAllVideoRoot = "somePath";
+
+export const fileShare = "somePath";
+
 
 export const allCameras = [
   "dirName1",
