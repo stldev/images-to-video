@@ -15,6 +15,7 @@ export const emailCfg = {
   user: "user",
   pass: "password",
   subject: "Photos of the day",
+   link: "https://somewhere.usa",
   client: "some_smtp",
   port: 587,
 };
