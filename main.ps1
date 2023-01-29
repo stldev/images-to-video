@@ -1,0 +1,2 @@
+cd C:\THIS_PROJECT_DIR_HERE
+npm start
