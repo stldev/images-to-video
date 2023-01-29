@@ -29,8 +29,8 @@ const execOpts = {
 };
 
 let camerasList = [];
-const today = "2023-01-28"; // FOR_TESTING
-// const today = new Date(new Date().setHours(12)).toISOString().split("T")[0];
+// const today = "2023-01-28"; // FOR_TESTING
+const today = new Date(new Date().setHours(12)).toISOString().split("T")[0];
 const today2 = today.replace(/-/g, "");
 
 let totalPassesNeeded = 0;
