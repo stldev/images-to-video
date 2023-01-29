@@ -1,0 +1,17 @@
+export const srcPathImgsRoot = "somePath";
+
+export const destPathImgsRoot = "somePath";
+
+export const allCameras = [
+  "dirName1",
+  "dirName2",
+];
+
+export const emailCfg = {
+  from: "email_from_address",
+  user: "user",
+  pass: "password",
+  subject: "Photos of the day",
+  client: "some_smtp",
+  port: 587,
+};

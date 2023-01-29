@@ -1,0 +1,14 @@
+{
+  "name": "imgs-to-video",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node ./src/index.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "videoshow": "0.1.12"
+  }
+}
