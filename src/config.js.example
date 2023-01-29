@@ -4,7 +4,6 @@ export const destPathAllVideoRoot = "somePath";
 
 export const fileShare = "somePath";
 
-
 export const allCameras = [
   "dirName1",
   "dirName2",
@@ -15,7 +14,7 @@ export const emailCfg = {
   user: "user",
   pass: "password",
   subject: "Photos of the day",
-   link: "https://somewhere.usa",
+  link: "https://somewhere.usa",
   client: "some_smtp",
   port: 587,
 };
