@@ -4,16 +4,15 @@ export const destPathAllVideoRoot = "somePath";
 
 export const fileShare = "somePath";
 
-export const allCameras = [
-  "dirName1",
-  "dirName2",
-];
+export const allCameras = ["dirName1", "dirName2"];
 
 export const emailCfg = {
+  admin: "some_email",
+  to: "some_email",
   from: "email_from_address",
   user: "user",
   pass: "password",
-  subject: "Photos of the day",
+  subject: "email_subject",
   link: "https://somewhere.usa",
   client: "some_smtp",
   port: 587,

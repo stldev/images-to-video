@@ -43,14 +43,14 @@ const bucketAmt = 300;
 const srcDir = "imgs";
 const destDir = "videos";
 
-function sendEmail(link, email) {
+function sendEmail(link, to, bcc) {
   const startedOn = new Date(timeStart).toLocaleString();
   const endedOn = new Date().toLocaleString();
-  const body = `Start: ${startedOn} | End: ${endedOn} | <a href='${link}'>VIEW_ALL_HERE</a>`;
+  const body = `Start: ${startedOn} | End: ${endedOn} <br><br> <a href='${link}'>VIEW_ALL_HERE</a>`;
   const creds = `-emailuser "${emailCfg.from}" -emailpass "${emailCfg.pass}"`;
 
   const scriptEmail = path.join(__dirname, "./send-email.ps1");
-  const scriptArgs = `-emailto "${email}" -emailsubject "${emailCfg.subject}" -emailbody "${body}" ${creds}`;
+  const scriptArgs = `-emailto "${to}" --emailbcc ${bcc} -emailsubject "${emailCfg.subject}" -emailbody "${body}" ${creds}`;
 
   execSync(`${scriptEmail} ${scriptArgs}`, execOpts);
 }
@@ -101,7 +101,8 @@ function combineAll(camera) {
     executeVideoshow(camerasList[0]);
   }
 
-  if (camerasList.length < 1) sendEmail(emailCfg.link, emailCfg.admin);
+  if (camerasList.length < 1)
+    sendEmail(emailCfg.link, emailCfg.to, emailCfg.admin);
 }
 
 function makeVid(camera) {
