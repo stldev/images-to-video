@@ -50,7 +50,7 @@ function sendEmail(link, to, bcc) {
   const creds = `-emailuser "${emailCfg.from}" -emailpass "${emailCfg.pass}"`;
 
   const scriptEmail = path.join(__dirname, "./send-email.ps1");
-  const scriptArgs = `-emailto "${to}" --emailbcc ${bcc} -emailsubject "${emailCfg.subject}" -emailbody "${body}" ${creds}`;
+  const scriptArgs = `-emailto "${to}" -emailbcc "${bcc}" -emailsubject "${emailCfg.subject}" -emailbody "${body}" ${creds}`;
 
   execSync(`${scriptEmail} ${scriptArgs}`, execOpts);
 }
