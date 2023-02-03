@@ -180,11 +180,13 @@ function start() {
       srcPathImgsRaw = `${srcPathImgsRoot}${camera}/${today2}/images`;
     }
     const srcPathImgs = normalize(srcPathImgsRaw);
-    const dirWithJpgs = readdirSync(srcPathImgs).filter((f) =>
-      f.includes(".jpg")
-    );
+    if (existsSync(srcPathImgs)) {
+      const dirWithJpgs = readdirSync(srcPathImgs).filter((f) =>
+        f.includes(".jpg")
+      );
 
-    if (dirWithJpgs.length) camerasList.push(camera);
+      if (dirWithJpgs.length) camerasList.push(camera);
+    }
   });
 
   executeVideoshow(camerasList[0]);
