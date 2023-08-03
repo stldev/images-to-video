@@ -2,6 +2,7 @@ import { execSync } from "node:child_process";
 import path, { normalize } from "node:path";
 import * as url from "url";
 import {
+  statSync,
   existsSync,
   mkdirSync,
   rmSync,
@@ -156,9 +157,13 @@ function executeVideoshow(camera) {
   if (!existsSync(destDir)) mkdirSync(destDir);
   if (!existsSync(`${destDir}/${camera}`)) mkdirSync(`${destDir}/${camera}`);
 
-  allImgPaths = readdirSync(`${srcDir}/${camera}`).map(
-    (m) => `./${srcDir}/${camera}/${m}`
-  );
+  allImgPaths = readdirSync(`${srcDir}/${camera}`).map((m) => {
+      const filePath = `./${srcDir}/${camera}/${m}`
+      const fileInfo = statSync(filePath)
+      if(fileInfo.size < 999) return null;
+      return filePath;
+    }).filter(Boolean);
+
 
   console.log(
     `----- camera: ${camera} | allImgPaths.length: ${allImgPaths.length} -----`
